@@ -57,11 +57,11 @@
         </p>
       </div>
 
-      <img src="path-to-your-third-image.jpg" alt="History" class="w-full md:w-1/2 h-auto mt-4 md:mt-0">
+      <img src="tank.jpg" alt="History" class="w-full md:w-1/2 h-auto mt-4 md:mt-0">
     </section>
 
     <section class="flex flex-col-reverse md:flex-row items-center my-16">
-      <img src="path-to-your-fourth-image.jpg" alt="AMTANK Armor logo" class="w-full md:w-1/2 h-auto md:mt-0">
+      <img src="add-on.jpg" alt="AMTANK Armor logo" class="w-full md:w-1/2 h-auto md:mt-0">
 
       <div class="w-full md:w-1/2">
         <h2 class="text-2xl font-bold text-black-500 mb-6">AMTANK Armor</h2>
