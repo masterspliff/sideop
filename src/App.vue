@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    <!-- add the navbar component here -->
+  <div id="app" class="relative">
     <Navbar/>
     <RouterView/> 
-
+    <Footer />
   </div>
-</template>
 
+
+  
+</template>
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 

@@ -8,6 +8,7 @@ import StructuralArmorView from '../views/StructuralArmorView.vue';
 import ServicesView from '../views/ServicesView.vue';
 import AboutView from '../views/AboutView.vue';
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -33,14 +34,17 @@ const router = createRouter({
         {
           path: 'add-on-armor',
           component: AddOnArmorView,
+          meta: { hideOurProductsSection: true },
         },
         {
           path: 'spall-liner',
           component: SpallLinerView,
+          meta: { hideOurProductsSection: true },
         },
         {
           path: 'structural-armor',
           component: StructuralArmorView,
+          meta: { hideOurProductsSection: true },
         },
       ],
     },

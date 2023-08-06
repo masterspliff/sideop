@@ -11,7 +11,7 @@
     <div class="absolute top-0 left-0 w-full h-full grid place-items-center z-10 text-center text-white min-h-screen">
       <div>
         <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">Composite Shielding Technology</h1>
-        <p class="mt-6 text-lg leading-8">
+        <p class="mt-10 text-2xl leading-8">
           We want to enable our customers to implement secure applications for protection<p>
           of humans and other valuables against blast, ballistic impact and other hostile actions.</p>
         </p>
@@ -29,11 +29,13 @@
   </div>
 
   <FutureCards />
+  <NewJob />
 </template>
 
 
 
 <script setup lang="ts">
 import FutureCards from '@/components/FutureCards.vue';
+import NewJob from '@/components/NewJob.vue';
 
 </script>

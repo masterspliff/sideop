@@ -1,5 +1,5 @@
 <template>
-  <div class="screens-container">
+  <div class="screens-container bg-gray-900">
     <div class="screen" v-for="(screen, index) in screensData" :key="index" @mouseenter="animateText(index)">
       <div :class="screen.image"></div>
       <div class="screen-overlay"></div>
@@ -23,22 +23,23 @@ export default {
   name: 'FutureCards',
   setup() {
     const screensData = [
-      {
-        name: 'LAND',
-        link: '/products',
-        image: 'screen-image-spall',
-      },
-      {
-        name: 'AIR',
-        link: '',
-        image: 'screen-image-addon',
-      },
-      {
-        name: 'NAVAL',
-        link: '',
-        image: 'screen-image-structure',
-      },
-    ];
+  {
+    name: 'Add-on',
+    link: '/products/add-on-armor',
+    image: 'screen-image-armor1',
+  },
+  {
+    name: 'Spall-Liner',
+    link: '/products/spall-liner',
+    image: 'screen-image-armor2',
+  },
+  {
+    name: 'Structural Armor',
+    link: '/products/structural-armor',
+    image: 'screen-image-armor3',
+  },
+];
+
 
     const text = screensData.map((screen) => ref(screen.name.replace(/"/g, '')));
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -228,8 +229,8 @@ html, body {
 
 
 
-.screen > .screen-image-structure {
-  background-image: url("../components/img/Land.png");
+.screen > .screen-image-armor1 {
+  background-image: url("/Armor1.JPG");
   height: 100%;
   width: 100%;
   position: absolute;
@@ -243,8 +244,8 @@ html, body {
   animation: pan-image 15s linear infinite;
 }
 
-.screen > .screen-image-addon {
-  background-image: url("../components/img/Land.png");
+.screen > .screen-image-armor2 {
+  background-image: url("/Armor2.jpg");
   height: 100%;
   width: 100%;
   position: absolute;
@@ -258,8 +259,8 @@ html, body {
   animation: pan-image 15s linear infinite;
 }
 
-.screen > .screen-image-spall {
-  background-image: url("../components/img/Land.png");
+.screen > .screen-image-armor3 {
+  background-image: url("/Armor3.JPG");
   height: 100%;
   width: 100%;
   position: absolute;

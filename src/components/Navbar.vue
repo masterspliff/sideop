@@ -1,111 +1,69 @@
 <template>
-<header :class="scrolled ? 'scrolled' : ''" class="z-20">
-  <nav class="bg-green mx-auto flex w-full items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <router-link to="/" class="-m-1.5 p-1.5">
-          <span class="sr-only">Composhield</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=500" alt="" />
-        </router-link>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <router-link to="/" class="router-link text-sm font-semibold">Home</router-link>
-        <router-link to="/about" class="router-link text-sm font-semibold">About</router-link>
-        <router-link to="/contact" class="router-link text-sm font-semibold">Contact</router-link>
-        <router-link to="/products" class="router-link text-sm font-semibold">Products</router-link>
-        <router-link to="/services" class="router-link text-sm font-semibold">Services</router-link>
-      </div>
+  <header :class="{ 'bg-white bg-opacity-80 blur[10px]': scrolled, 'bg-transparent': !scrolled }" class="sticky top-0 h-0 transition-all duration-500 z-50">
+    <nav class="bg-gray-900 mx-auto flex w-full items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex items-center flex-wrap justify-between w-full">
+        <div class="flex items-center">
+          <router-link to="/" class="m-[-1.5] p-1.5">
+            <span class="sr-only">Composhield</span>
+            <img class="h-10 w-auto rounded-sm" src="@/assets/logojpg.jpg" alt="Composhield Logo" />
+          </router-link>
+          <div class="hidden md:block lg:block ml-2 text-white text-lg font-semibold">COMPOSHIELD</div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden relative z-100">
+          <button @click.stop="toggleMenu" class="focus:outline-none" aria-label="Toggle menu">
+            <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div> 
+
+      <MenuLinks :is-mobile="false" class="hidden lg:flex lg:space-x-12" />
     </nav>
+
+    <transition name="slide-in">
+      <MenuLinks v-if="isMenuOpen" :is-mobile="true" class="menu-content flex flex-col justify-center items-start" />
+    </transition>
   </header>
 </template>
 
+
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import MenuLinks from './MenuLinks.vue' // import the MenuLinks component
+import { throttle } from 'lodash' // import lodash throttle function
 
-const scrolled = ref(false);
+let scrolled = ref(false)
+let isMenuOpen = ref(false)
 
-const updateScroll = () => {
-  scrolled.value = window.scrollY > 50;
-};
+const updateScroll = throttle(() => {
+  scrolled.value = window.scrollY > 50
+}, 300) // throttle scroll events to improve performance
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+const handleClickOutside = event => {
+  const menuContent = document.querySelector('.menu-content')
+  if (menuContent && !menuContent.contains(event.target)) {
+    isMenuOpen.value = false
+  }
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', updateScroll);
-});
+  window.addEventListener('scroll', updateScroll)
+  document.addEventListener('click', handleClickOutside)
+})
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', updateScroll);
-});
+  window.removeEventListener('scroll', updateScroll)
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
-<style scoped>
-header {
-  position: sticky;
-  top: 0;
-  transition: background-color 0.5s, height 0.5s;
-  z-index: 100;
-}
-
-header {
-  background-color: transparent;
-  opacity: 1;
-}
-
-header.scrolled {
-  background-color: transparent ;
-}
-
-header nav {
-  background: rgba(119, 119, 119, 0.411); /* military grey gradient */
-  height: 100px;
-  transition: height 0.8s;
-}
-
-header.scrolled nav {
-  height: 70px;
-}
-
-.router-link {
-  color: #ffffff; /* non-active link color */
-  font-size: 18px;
-  text-decoration: none;
-  padding: 8px 10px; /* Decrease horizontal padding */
-  position: relative;
-  transition: color 0.5s ease;
-}
-
-.router-link:before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #ffffff; /* Make underline darker for contrast against light background */
-  visibility: hidden;
-  transition: all 0.5s ease-in-out;
-}
-
-.router-link:hover {
-  color: #838383;
-}
-
-.router-link:hover:before {
-  visibility: visible;
-  width: 100%;
-}
-
-.router-link-exact-active,
-.router-link-active {
-  color: #ffffff; /* active link color */
-  
-}
-
-.router-link-exact-active:before,
-.router-link-active:before {
-  visibility: visible;
-  width: 100%;
-}
-
-
-
-
-</style>

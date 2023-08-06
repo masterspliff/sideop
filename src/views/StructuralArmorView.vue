@@ -1,65 +1,116 @@
 <template>
-    <div>
-      <h1>Structural Armor: Strong, Resilient, and Designed to Withstand the Toughest Conditions</h1>
-      <p>In the face of threats and extreme structural loads, Structural Armor provides steadfast protection. These armor solutions are ingeniously designed to withstand structural loadings while also resisting hostile actions. This dual capability empowers designers to utilize these armor panels as integral construction elements in vehicles, shelters, and buildings, reinforcing their structural integrity without compromising on safety.</p>
-  
-      <p>Composhield has established a reputation for innovation in this field, maintaining three types of structural armor technologies, each tailor-made to meet specific application areas: non-mobile, semi-mobile, and mobile.</p>
-      
-      <div>
-        <img src="spall_liner_logo" alt="Spall Liner Logo">
-        <p>Looking for add-on armor or structural building solutions? Explore our product range:</p>
-        <ul>
-            <li>Spall Liner</li>
-            <li>Add-on Armor</li>
-        </ul>
-      </div>
-  
-      <h2>Non-Mobile: Resilient Structures with HIRC</h2>
-      <p>Non-Mobile applications involve permanent structures such as embassies, military headquarters, and power plants that are often primary targets for hostile actions. The predominant threat for these installations is large explosive charges, amounting to several hundred kilograms of TNT.</p>
-      
-      <p>Composhield has developed and patented a unique solution for these applications: High Impact-Resistant Composite, or HIRC. These products are incredibly resistant to blast loads and can effectively safeguard permanent installations with minimal spatial footprint.</p>
-      
-      <p>The technology integrates a UHSS rebar pattern intertwined with high-strength aramid fibers embedded in a specialized cementitious matrix. This composition forms a panel that possesses exceptional strength, offering ductility that enables a HIRC panel to absorb vast amounts of energy without breaking apart or losing structural integrity.</p>
-  
-      <h2>Semi-Mobile: Sturdy and Reliable with SC Technology</h2>
-      <p>Composhield's patented technology for semi-mobile applications is the Steel-Concrete composite, or SC. This system leverages a combination of HHA steel, HH steel, and a reinforced cementitious matrix to create an armor panel that offers:</p>
-      
-      <ul>
-        <li>Excellent resistance to blast loading</li>
-        <li>Ballistic protection up to STANAG 4569 Level 3</li>
-        <li>Protection against fragmentation</li>
-      </ul>
-      
-      <p>The SC technology might be heavier compared to our mobile CP technology for the same threat level, but it provides superior protection at a more affordable cost. It's ideally suited for safeguarding larger structures where mass is not the most crucial factor.</p>
-  
-      <h2>Mobile: Exceptional Strength and Stiffness with CP Technology</h2>
-      <p>Composhield's structural armor for mobile applications features high-strength and high-stiffness composite materials that incorporate ballistic properties. The armor component is derived from our Ceramic Polymer (CP) technology, widely used for add-on armor.</p>
-      
-      <p>In mobile applications, the CP armor is reconfigured to better carry and absorb structural loads, allowing the armor panels to be used as structural elements for sides, doors, hatches, etc., while still providing ballistic protection.</p> 
-  
-      <p>Key benefits include:</p>
-      <ul>
-        <li>Ballistic performance up to STANAG 4569 Level 4</li>
-        <li>Protection against fragments from mortars and artillery shells</li>
-        <li>High structural stiffness and strength</li>
-        <li>Excellent multi-hit capabilities</li>
-        <li>Good resistance to blast loading</li>
-      </ul>
-  
-      <p>This design minimizes the overall mass of the armor system, eliminating material wastage on redundant system components. This makes the CP structural armor ideal for applications where mass and space are at a premium.</p>
-  
-      <product-links></product-links>
+
+<HeroSection 
+    :imageSrc="imageSrc" 
+    headline="Introducing Structural Armor: Protection Beyond Combat." 
+    subheadline="Strong, Resilient, and Designed to Withstand the Toughest Conditions"
+    />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 shadow-inner">
+    <div class="text-center">
+        <h2 class="text-2xl font-bold text-blue-600 mb-6">Steadfast Protection Against Threats</h2>
+        
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            In the face of threats and extreme structural loads, <span class="font-semibold">Structural Armor</span> emerges as a beacon of unwavering protection. Ingeniously crafted, these armor solutions stand strong against hostile actions, all while shouldering substantial structural loads. Their dual prowess empowers architects and designers, offering them the liberty to embed these panels as pivotal construction entities across vehicles, shelters, and infrastructures. In doing so, they bolster structural integrity without a hint of compromise on safety.
+        </p>
+        
+        <hr class="border-gray-300 my-6">
+        
+        <p class="text-lg text-gray-700 leading-relaxed">
+            <span class="font-semibold">Composhield</span>, a pioneer in armor technology, stands tall with its innovative flair. Our suite encompasses three distinguished structural armor technologies, each meticulously sculpted for specific application arenas: non-mobile, semi-mobile, and mobile.
+        </p>
+        
+        <div class="mt-6">
+            <span class="inline-block bg-blue-600 text-white px-4 py-1 rounded font-semibold text-sm shadow">Innovation in Defense</span>
+        </div>
     </div>
-  </template>
+</div>
+
+
+    <div class="mt-12 grid gap-5 lg:grid-cols-3">
+     <ProductCards
+    title="Non-Mobile: Resilient Structures with HIRC"
+    description="Non-Mobile applications involve permanent structures such as embassies, military headquarters, and power plants targeted by hostile actions. The predominant threat is large explosive charges, like hundreds of kilograms of TNT. Composhield’s solution is the High Impact-Resistant Composite (HIRC), resistant to blast loads. The tech integrates a UHSS rebar pattern with aramid fibers in a specialized cementitious matrix, forming a durable panel that absorbs significant energy without loss of integrity."
+    features="Excellent resistance to blasts; Ballistic protection to STANAG 4569 Level 3; Protects against fragmentation"
+    additional="Although heavier than our mobile CP tech, the SC tech is more cost-effective, suitable for protecting larger structures where mass isn’t the main concern."
+    image="/Hirc_panel.jpg"
+/>
+
+<ProductCards
+    title="Semi-Mobile: Advanced SC Technology"
+    description="Semi-Mobile solutions, like container doors with SC packages, benefit from Composhield’s patented Steel-Concrete composite (SC). This unique system combines HHA steel and HH steel with a reinforced cement matrix, producing an armor panel specialized for semi-mobile contexts."
+    features="Outstanding blast resistance; Ballistic defense up to STANAG 4569 Level 3; Defense against fragmentation"
+    additional="The SC tech, while heavier than mobile CP, is cost-efficient, making it apt for guarding sizable structures where weight isn't paramount."
+    image="/semi-mobile-door.jpg"
+/>
+
+<ProductCards
+    title="Mobile: High-Strength Composhield Armor"
+    description="Composhield's armor for mobile settings uses high-strength composite materials with ballistic properties. The Ceramic Polymer (CP) technology, also used for add-on armor, is optimized for mobile use. These CP armor panels function as structural elements, like sides or doors, while ensuring ballistic protection."
+    features="STANAG 4569 Level 4 ballistic performance; Defense from artillery shell fragments; Exceptional structural strength and stiffness"
+    additional="The CP armor system is lightweight, eliminating redundant components. This makes it perfect for scenarios with limited mass and space."
+    image="/mobile-panel.png"
+/>
+
+
+    </div>
+  </div>
+
+  <ProductFeature 
+      :title="'Effective, Lightweight, and Customizable Protection for Vehicles'"
+      :description="'Our add-on armor solutions enhance the protection level of both existing and new vehicles, ensuring safety and durability.'"
+      :featuresList="features"
+      :imagesList="images"
+    />
+
+
+
+
+</template>
+
   
-  <script>
-  import ProductLinks from '@/components/ProductLinks.vue';
-  
-  export default {
-    name: 'StructuralArmorView',
-    components: {
-      ProductLinks
-    }
-  };
+<script setup lang="ts">
+import { ref } from 'vue'
+import ProductCards from '@/components/ProductCards.vue'
+import HeroSection from '@/components/HeroSection.vue';
+import ProductFeature from '@/components/ProductFeature.vue'
+
+const features = ref([
+    { 
+      name: 'Customized Solutions', 
+      description: 'Add-on armor provides customized solutions for a wide range of vehicles, ensuring maximum protection with minimum weight addition.' 
+    },
+    { 
+      name: 'Multiple Protection Capabilities', 
+      description: 'In addition to projectile protection, add-on armor withstands impacts, including vibration and shock, and is resistant to UV light, chemicals, and decontaminating agents.' 
+    },
+    { 
+      name: 'High Multi-Hit Capability', 
+      description: 'Our armor features a high multi-hit capability, providing outstanding protection against multiple projectiles or fragments.' 
+    },
+    { 
+      name: 'Advanced Armor Technology', 
+      description: 'Our advanced armor technology offers a wide range of options for customized protection systems, tailored to individual needs and specific types of vehicles.' 
+    },
+    { 
+      name: 'Lightweight and Durable', 
+      description: 'Composhield is dedicated to developing light and durable armor solutions to defeat ballistic and IED threats as faced on the battlefield today.' 
+    },
+    { 
+      name: 'Enhanced Vehicle Flexibility', 
+      description: 'Add-on armor systems increase the flexibility of any vehicle by matching ballistic threats beyond what the vehicle itself can withstand.' 
+    },
+]);
+
+const images = ref([
+  { src: '/tank.jpg', alt: 'Add-On Armor Image 1', description: 'Detailed view of Add-On Armor' },
+  { src: '/struct-1.JPG', alt: 'Add-On Armor Image 2', description: 'Close-up of armor material' },
+  { src: '/struct-2.jpg', alt: 'Add-On Armor Image 3', description: 'Armor being tested in a facility' },
+  { src: '/tank.jpg', alt: 'Add-On Armor Image 4', description: 'Armor installed on a vehicle' },
+]);
+
+  const imageSrc = '/structural-armor-war.jpg';
+
   </script>
   
