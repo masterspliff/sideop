@@ -122,7 +122,9 @@
   </template>
   
   
-  <script>
+  <script setup lang="ts">
+  import $ from 'jquery';
+
 jQuery(document).ready(function($){
 	var timelines = $('.cd-horizontal-timeline'),
 		eventsMinDistance = 60;
