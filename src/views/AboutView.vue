@@ -12,69 +12,58 @@
       <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
     </div>
   </div>
-  
-  <div class="about p-6 flex flex-col items-center">
-    <section class="bg-gray-900 pb-20 min-h-[646px] rounded-tl-3xl rounded-br-3xl">
-  <div class="flex justify-center items-center min-h-[559px] w-full">
-    <div class="w-96 min-h-[513px] mt-12 ml-10 mr-10 text-white">
-      <h2 class="text-4xl">Vision and mission</h2>
-      <p class="mb-4">&nbsp;</p>
-      <p class="text-xl">Vision</p>
-      <p>
-        Composhield's vision is to become the preferred supplier of protective solutions for civilian and military applications through innovative and progressive new technologies.
-      </p>
-      <p class="mb-4">&nbsp;</p>
-      <p class="text-xl">Mission</p>
-      <p>
-        We want to enable our customers to implement secure applications for protection of humans and other valuables against blast, ballistic impact and other hostile actions.
-      </p>
-      <p class="mb-4">&nbsp;</p>
-    </div>
-  </div>
-</section>
+
+  <!-- History & Timeline Section -->
+  <FiftyFifty
+   title="History"
+   :paragraphs="[
+      'Composhield A/S started in 1996 as an internal research project in the company Giantcode A/S. From 1996 and until the forming of the company Composhield A/S, several project teams were developing new protection technologies for the future.',
+      'All efforts were purely put into research as the strategy was to develop unique patented technologies before any commercialization. All research was done in close cooperation with international universities, armed forces, and some of the largest global defense companies.',
+      'Composhield A/S was then formed in year 2000 and has today seven patents and patent pending technologies and products. In 2007 Composhield A/S formed a joint-venture, AMTANK Armor LLC., together with American Tank & Fabricating Company, to serve the North American market.',
+      'Our strategic intent is to develop tomorrows technologies for todays global market, with the main focus on strategic partnership and superior quality.'
+   ]"
+>
+   <template #alternateVisual>
+      <Timeline :milestones="[
+         { year: 1996, description: 'Started as an internal research project.' },
+         { year: 2000, description: 'Composhield A/S was formed.' },
+         { year: 2007, description: 'Formed a joint-venture, AMTANK Armor LLC.' }
+      ]" />
+   </template>
+</FiftyFifty>
 
 
+  <!-- AMTANK Armor Section -->
+  <FiftyFifty
+     title="AMTANK Armor"
+     :paragraphs="[
+        'AMTANK Armor, located in Strongsville, Ohio, designs and manufactures survivability components for OEMs, Tier I and Tier II partners. The company was founded as a joint venture between US-based American Tank & Fabricating Company and Composhield A/S.',
+        'AMTANK Armor offers a unique combination of leading-edge manufacturing capabilities and composite armor technologies with an ongoing commitment to research and development. Our focus is design and manufacturing of armor materials for vehicle platforms to protect against blast, ballistic and other hostile actions.'
+     ]"
+     imageSrc="add-on.jpg"
+     imageAlt="AMTANK Armor logo"
+     reverseOrder
+  />
 
+  <!-- Vision and Mission Section -->
+  <FiftyFifty
+     title="Vision and Mission"
+     :paragraphs="[
+        'Vision: Composhield\'s vision is to become the preferred supplier of protective solutions for civilian and military applications through innovative and progressive new technologies.',
+        'Mission: We want to enable our customers to implement secure applications for protection of humans and other valuables against blast, ballistic impact and other hostile actions.'
+     ]"
+     imageSrc="vision-mission-placeholder.jpg"
+     imageAlt="Vision and Mission of Composhield"
+  />
 
-    <section class="flex flex-col md:flex-row items-center my-16">
-      <div class="w-full md:w-1/2">
-        <h2 class="text-2xl font-bold text-black-500 mb-6">History</h2>
+<HorizontalTimeline/>
 
-        <p class="text-lg mb-4">
-          Composhield A/S started in 1996 as an internal research project in the company Giantcode A/S. From 1996 and until the forming of the company Composhield A/S, which stands for Composite Shielding, several project teams were developing new protection technologies for the future.
-        </p>
-
-        <p class="text-lg mb-4">
-          All efforts were purely put into research as the strategy was to develop unique patented technologies before any commercialization. All research was done in close cooperation with international universities, armed forces, as well as some of the largest global defense companies.
-        </p>
-
-        <p class="text-lg mb-4">
-          Composhield A/S was then formed in year 2000 and has today seven patents and patent pending technologies and products. In 2007 Composhield A/S formed a joint-venture, AMTANK Armor LLC., together with American Tank & Fabricating Company, to serve the North American market.
-        </p>
-
-        <p class="text-lg">
-          Our strategic intent is to develop tomorrow's technologies for today's global market, with the main focus on strategic partnership and superior quality.
-        </p>
-      </div>
-
-      <img src="tank.jpg" alt="History" class="w-full md:w-1/2 h-auto mt-4 md:mt-0">
-    </section>
-
-    <section class="flex flex-col-reverse md:flex-row items-center my-16">
-      <img src="add-on.jpg" alt="AMTANK Armor logo" class="w-full md:w-1/2 h-auto md:mt-0">
-
-      <div class="w-full md:w-1/2">
-        <h2 class="text-2xl font-bold text-black-500 mb-6">AMTANK Armor</h2>
-
-        <p class="text-lg mb-4">
-          AMTANK Armor, located in Strongsville, Ohio, designs and manufactures survivability components for OEMs, Tier I and Tier II partners. The company was founded as a joint venture between US-based American Tank & Fabricating Company and Composhield A/S.
-        </p>
-
-        <p class="text-lg">
-          AMTANK Armor offers a unique combination of leading-edge manufacturing capabilities and composite armor technologies with an ongoing commitment to research and development. Our focus is design and manufacturing of armor materials for vehicle platforms to protect against blast, ballistic and other hostile actions.
-        </p>
-      </div>
-    </section>
-  </div>
 </template>
+
+<script setup lang="ts">
+import FiftyFifty from '@/components/FiftyFifty.vue';
+import Timeline from '@/components/Timeline.vue';
+import HorizontalTimeline from '@/components/HorizontalTimeline.vue';
+
+</script>
 
