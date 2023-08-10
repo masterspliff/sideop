@@ -1,216 +1,405 @@
 <template>
-	<section class="cd-horizontal-timeline">
-	  <div class="timeline">
-		<div class="events-wrapper" ref="eventsWrapper">
-		  <div class="events">
-			<ol>
-			  <li v-for="event in timelineEvents" :key="event.date">
-				<!-- Added click event listener to handle when an event is clicked -->
-				<a href="#0" :data-date="event.date" @click.prevent="handleEventClick($event)">{{ formatDate(event.date) }}</a>
-			  </li>
-			</ol>
-			<!-- Added ref attribute for filling-line -->
-			<span class="filling-line" ref="fillingLine" aria-hidden="true"></span>
-		  </div>
-		</div>
-		<div :class="computedClass">
-		  <!-- Added ref attribute for timelineNavigation -->
-		  <ul class="cd-timeline-navigation" ref="timelineNavigation">
-			<li><a href="#0" class="prev inactive" @click.prevent="handlePrevClick">Prev</a></li>
-			<li><a href="#0" class="next" @click.prevent="handleNextClick">Next</a></li>
-		  </ul>
-		</div>
-	  </div>
-	  <!-- Added ref attribute for eventsContent -->
-	  <div class="events-content" ref="eventsContent">
+<section class="cd-horizontal-timeline">
+	<div class="timeline">
+		<div class="events-wrapper">
+			<div class="events">
+				<ol>
+					<li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
+					<li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+					<li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
+					<li><a href="#0" data-date="20/05/2014">20 May</a></li>
+					<li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
+					<li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
+					<li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
+					<li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
+					<li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
+					<li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
+					<li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
+				</ol>
+
+				<span class="filling-line" aria-hidden="true"></span>
+			</div> <!-- .events -->
+		</div> <!-- .events-wrapper -->
+			
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">Prev</a></li>
+			<li><a href="#0" class="next">Next</a></li>
+		</ul> <!-- .cd-timeline-navigation -->
+	</div> <!-- .timeline -->
+
+	<div class="events-content">
 		<ol>
-		  <li v-for="event in timelineEvents" :key="event.date" :data-date="event.date">
-			<h2>{{ event.title }}</h2>
-			<em>{{ event.fullDate }}</em>
-			<p>{{ event.description }}</p>
-		  </li>
+			<li class="selected" data-date="16/01/2014">
+				<h2>Horizontal Timeline</h2>
+				<em>January 16th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="28/02/2014">
+				<h2>Event title here</h2>
+				<em>February 28th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="20/04/2014">
+				<h2>Event title here</h2>
+				<em>March 20th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="20/05/2014">
+				<h2>Event title here</h2>
+				<em>May 20th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="09/07/2014">
+				<h2>Event title here</h2>
+				<em>July 9th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="30/08/2014">
+				<h2>Event title here</h2>
+				<em>August 30th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="15/09/2014">
+				<h2>Event title here</h2>
+				<em>September 15th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="01/11/2014">
+				<h2>Event title here</h2>
+				<em>November 1st, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="10/12/2014">
+				<h2>Event title here</h2>
+				<em>December 10th, 2014</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="19/01/2015">
+				<h2>Event title here</h2>
+				<em>January 19th, 2015</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
+
+			<li data-date="03/03/2015">
+				<h2>Event title here</h2>
+				<em>March 3rd, 2015</em>
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+				</p>
+			</li>
 		</ol>
-	  </div>
-	</section>
+	</div> <!-- .events-content -->
+</section>
   </template>
   
   
   <script>
-export default {
-  data() {
-	return {
-    // ... other data properties
-    timelineEvents: [
-      {
-        date: 'start',
-        title: 'Start',
-        fullDate: 'Beginning of the timeline',
-        description: ''
-      },
-      {
-        date: '1996',
-        title: '1996',
-        fullDate: '1996',
-        description: 'Started as an internal research project.'
-      },
-      {
-        date: '2000',
-        title: '2000',
-        fullDate: '2000',
-        description: 'Composhield A/S was formed.'
-      },
-      {
-        date: '2007',
-        title: '2007',
-        fullDate: '2007',
-        description: 'Formed a joint-venture, AMTANK Armor LLC.'
-      },
-      {
-        date: 'history',
-        title: 'History',
-        fullDate: '',
-        description: 'Composhield A/S started in 1996 as an internal research project in the company Giantcode A/S. From 1996 and until the forming of the company Composhield A/S, several project teams were developing new protection technologies for the future. All efforts were purely put into research as the strategy was to develop unique patented technologies before any commercialization. All research was done in close cooperation with international universities, armed forces, and some of the largest global defense companies. Composhield A/S was then formed in year 2000 and has today seven patents and patent pending technologies and products. In 2007 Composhield A/S formed a joint-venture, AMTANK Armor LLC., together with American Tank & Fabricating Company, to serve the North American market. Our strategic intent is to develop tomorrows technologies for todays global market, with the main focus on strategic partnership and superior quality.'
-      }
-    ],
+jQuery(document).ready(function($){
+	var timelines = $('.cd-horizontal-timeline'),
+		eventsMinDistance = 60;
 
-      timelines: null,
-      eventsMinDistance: 60,
-      timelineComponents: {
-        timelineWrapper: null,
-        eventsWrapper: null,
-        fillingLine: null,
-        timelineEvents: null,
-        timelineDates: [],
-        eventsMinLapse: null,
-        timelineNavigation: null,
-        eventsContent: null
-      }
-    };
-  },
+	(timelines.length > 0) && initTimeline(timelines);
 
-  mounted() {
-    this.initTimeline();
-  },
+	function initTimeline(timelines) {
+		timelines.each(function(){
+			var timeline = $(this),
+				timelineComponents = {};
+			//cache timeline components 
+			timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
+			timelineComponents['eventsWrapper'] = timelineComponents['timelineWrapper'].children('.events');
+			timelineComponents['fillingLine'] = timelineComponents['eventsWrapper'].children('.filling-line');
+			timelineComponents['timelineEvents'] = timelineComponents['eventsWrapper'].find('a');
+			timelineComponents['timelineDates'] = parseDate(timelineComponents['timelineEvents']);
+			timelineComponents['eventsMinLapse'] = minLapse(timelineComponents['timelineDates']);
+			timelineComponents['timelineNavigation'] = timeline.find('.cd-timeline-navigation');
+			timelineComponents['eventsContent'] = timeline.children('.events-content');
 
-  methods: {
-    initTimeline() {
-      // Cache timeline components
-      this.timelineComponents.timelineWrapper = this.$refs.timelineWrapper;
-      this.timelineComponents.eventsWrapper = this.$refs.eventsWrapper;
-      this.timelineComponents.fillingLine = this.$refs.fillingLine;
-      this.timelineComponents.timelineEvents = this.$refs.timelineEvents;
-      this.timelineComponents.timelineDates = this.parseDate(this.timelineComponents.timelineEvents);
-      this.timelineComponents.eventsMinLapse = this.minLapse(this.timelineComponents.timelineDates);
-      this.timelineComponents.timelineNavigation = this.$refs.timelineNavigation;
-      this.timelineComponents.eventsContent = this.$refs.eventsContent;
+			//assign a left postion to the single events along the timeline
+			setDatePosition(timelineComponents, eventsMinDistance);
+			//assign a width to the timeline
+			var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance);
+			//the timeline has been initialize - show it
+			timeline.addClass('loaded');
 
-      this.setDatePosition();
-      const timelineTotWidth = this.setTimelineWidth();
-      // Assuming you have a method or computed property to add the 'loaded' class
-      this.timelines = 'loaded';
-    },
+			//detect click on the next arrow
+			timelineComponents['timelineNavigation'].on('click', '.next', function(event){
+				event.preventDefault();
+				updateSlide(timelineComponents, timelineTotWidth, 'next');
+			});
+			//detect click on the prev arrow
+			timelineComponents['timelineNavigation'].on('click', '.prev', function(event){
+				event.preventDefault();
+				updateSlide(timelineComponents, timelineTotWidth, 'prev');
+			});
+			//detect click on the a single event - show new event content
+			timelineComponents['eventsWrapper'].on('click', 'a', function(event){
+				event.preventDefault();
+				timelineComponents['timelineEvents'].removeClass('selected');
+				$(this).addClass('selected');
+				updateOlderEvents($(this));
+				updateFilling($(this), timelineComponents['fillingLine'], timelineTotWidth);
+				updateVisibleContent($(this), timelineComponents['eventsContent']);
+			});
 
-    handlePrevClick() {
-      this.updateSlide('prev');
-    },
+			//on swipe, show next/prev event content
+			timelineComponents['eventsContent'].on('swipeleft', function(){
+				var mq = checkMQ();
+				( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'next');
+			});
+			timelineComponents['eventsContent'].on('swiperight', function(){
+				var mq = checkMQ();
+				( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+			});
 
-    handleNextClick() {
-      this.updateSlide('next');
-    },
+			//keyboard navigation
+			$(document).keyup(function(event){
+				if(event.which=='37' && elementInViewport(timeline.get(0)) ) {
+					showNewContent(timelineComponents, timelineTotWidth, 'prev');
+				} else if( event.which=='39' && elementInViewport(timeline.get(0))) {
+					showNewContent(timelineComponents, timelineTotWidth, 'next');
+				}
+			});
+		});
+	}
 
-    translateTimeline(value, totWidth) {
-      const eventsWrapper = this.timelineComponents.eventsWrapper;
-      value = Math.max(value, 0); // only negative translate value
-      value = Math.min(value, totWidth); // do not translate more than timeline width
-      this.setTransformValue(eventsWrapper, 'translateX', `${value}px`);
-      // update navigation arrows visibility
-      if (value === 0) {
-        this.timelineComponents.timelineNavigation.querySelector('.prev').classList.add('inactive');
-      } else {
-        this.timelineComponents.timelineNavigation.querySelector('.prev').classList.remove('inactive');
-      }
-      if (value === totWidth) {
-        this.timelineComponents.timelineNavigation.querySelector('.next').classList.add('inactive');
-      } else {
-        this.timelineComponents.timelineNavigation.querySelector('.next').classList.remove('inactive');
-      }
-    },
+	function updateSlide(timelineComponents, timelineTotWidth, string) {
+		//retrieve translateX value of timelineComponents['eventsWrapper']
+		var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
+			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+		//translate the timeline to the left('next')/right('prev') 
+		(string == 'next') 
+			? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
+			: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
+	}
 
-    updateFilling(selectedEvent, filling, totWidth) {
-      const eventStyle = window.getComputedStyle(selectedEvent);
-      const eventLeft = parseFloat(eventStyle.left) + parseFloat(eventStyle.width) / 2;
-      const scaleValue = eventLeft / totWidth;
-      this.setTransformValue(filling, 'scaleX', scaleValue);
-    },
+	function showNewContent(timelineComponents, timelineTotWidth, string) {
+		//go from one event to the next/previous one
+		var visibleContent =  timelineComponents['eventsContent'].find('.selected'),
+			newContent = ( string == 'next' ) ? visibleContent.next() : visibleContent.prev();
 
-    setDatePosition() {
-      this.timelineComponents.timelineDates.forEach((date, i) => {
-        const distance = this.daydiff(this.timelineComponents.timelineDates[0], date);
-        const distanceNorm = Math.round(distance / this.timelineComponents.eventsMinLapse) + 2;
-        this.timelineComponents.timelineEvents[i].style.left = `${distanceNorm * this.eventsMinDistance}px`;
-      });
-    },
+		if ( newContent.length > 0 ) { //if there's a next/prev event - show it
+			var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
+				newEvent = ( string == 'next' ) ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
+			
+			updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
+			updateVisibleContent(newEvent, timelineComponents['eventsContent']);
+			newEvent.addClass('selected');
+			selectedDate.removeClass('selected');
+			updateOlderEvents(newEvent);
+			updateTimelinePosition(string, newEvent, timelineComponents, timelineTotWidth);
+		}
+	}
 
-    setTimelineWidth() {
-      const timeSpan = this.daydiff(this.timelineComponents.timelineDates[0], this.timelineComponents.timelineDates[this.timelineComponents.timelineDates.length - 1]);
-      const timeSpanNorm = Math.round(timeSpan / this.timelineComponents.eventsMinLapse) + 4;
-      const totalWidth = timeSpanNorm * this.eventsMinDistance;
-      this.timelineComponents.eventsWrapper.style.width = `${totalWidth}px`;
-      this.updateFilling(this.timelineComponents.timelineEvents[0], this.timelineComponents.fillingLine, totalWidth);
-      return totalWidth;
-    },
+	function updateTimelinePosition(string, event, timelineComponents, timelineTotWidth) {
+		//translate timeline to the left/right according to the position of the selected event
+		var eventStyle = window.getComputedStyle(event.get(0), null),
+			eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
+			timelineWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', '')),
+			timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
+		var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
 
-    updateSlide(direction) {
-      const timelineTotWidth = this.setTimelineWidth();
-      const translateValue = this.getTranslateValue(this.timelineComponents.eventsWrapper);
-      const wrapperWidth = parseFloat(this.timelineComponents.timelineWrapper.style.width);
+        if( (string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate) ) {
+        	translateTimeline(timelineComponents, - eventLeft + timelineWidth/2, timelineWidth - timelineTotWidth);
+        }
+	}
 
-      if (direction === 'next') {
-        this.translateTimeline(translateValue - wrapperWidth + this.eventsMinDistance, wrapperWidth - timelineTotWidth);
-      } else {
-        this.translateTimeline(translateValue + wrapperWidth - this.eventsMinDistance);
-      }
-    },
+	function translateTimeline(timelineComponents, value, totWidth) {
+		var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
+		value = (value > 0) ? 0 : value; //only negative translate value
+		value = ( !(typeof totWidth === 'undefined') &&  value < totWidth ) ? totWidth : value; //do not translate more than timeline width
+		setTransformValue(eventsWrapper, 'translateX', value+'px');
+		//update navigation arrows visibility
+		(value == 0 ) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
+		(value == totWidth ) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
+	}
 
-    // ... other methods ...
+	function updateFilling(selectedEvent, filling, totWidth) {
+		//change .filling-line length according to the selected event
+		var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
+			eventLeft = eventStyle.getPropertyValue("left"),
+			eventWidth = eventStyle.getPropertyValue("width");
+		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
+		var scaleValue = eventLeft/totWidth;
+		setTransformValue(filling.get(0), 'scaleX', scaleValue);
+	}
 
-    formatDate(date) {
-      const dateObj = new Date(date);
-      return dateObj.getFullYear().toString();
-    },
+	function setDatePosition(timelineComponents, min) {
+		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
+		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
+		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
+		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
+		}
+	}
 
-    parseDate(events) {
-      return events.map(event => {
-        const dateComp = event.dataset.date.split('/');
-        return new Date(dateComp[2], dateComp[1] - 1, dateComp[0]);
-      });
-    },
+	function setTimelineWidth(timelineComponents, width) {
+		var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length-1]),
+			timeSpanNorm = timeSpan/timelineComponents['eventsMinLapse'],
+			timeSpanNorm = Math.round(timeSpanNorm) + 4,
+			totalWidth = timeSpanNorm*width;
+		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
+		updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['fillingLine'], totalWidth);
+	
+		return totalWidth;
+	}
 
-    daydiff(first, second) {
-      return Math.round((second - first) / (1000 * 60 * 60 * 24)); // Difference in days
-    },
+	function updateVisibleContent(event, eventsContent) {
+		var eventDate = event.data('date'),
+			visibleContent = eventsContent.find('.selected'),
+			selectedContent = eventsContent.find('[data-date="'+ eventDate +'"]'),
+			selectedContentHeight = selectedContent.height();
 
-    minLapse(dates) {
-      const dateDistances = dates.slice(1).map((date, i) => this.daydiff(dates[i], date));
-      return Math.min(...dateDistances);
-    },
+		if (selectedContent.index() > visibleContent.index()) {
+			var classEnetering = 'selected enter-right',
+				classLeaving = 'leave-left';
+		} else {
+			var classEnetering = 'selected enter-left',
+				classLeaving = 'leave-right';
+		}
 
-    getTranslateValue(timeline) {
-      const timelineStyle = window.getComputedStyle(timeline);
-      const timelineTranslate = timelineStyle.transform || timelineStyle.webkitTransform || timelineStyle.mozTransform;
-      const match = /matrix\(\d, \d, \d, \d, (-?\d+\.?\d*), \d\)/.exec(timelineTranslate);
-      return match ? parseFloat(match[1]) : 0;
-    },
+		selectedContent.attr('class', classEnetering);
+		visibleContent.attr('class', classLeaving).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			visibleContent.removeClass('leave-right leave-left');
+			selectedContent.removeClass('enter-left enter-right');
+		});
+		eventsContent.css('height', selectedContentHeight+'px');
+	}
 
-    setTransformValue(element, property, value) {
-      element.style.transform = `${property}(${value})`;
-      element.style.webkitTransform = `${property}(${value})`;
-      element.style.mozTransform = `${property}(${value})`;
-      element.style.msTransform = `${property}(${value})`;
-      element.style.oTransform = `${property}(${value})`;
-    }
-  }
-};
+	function updateOlderEvents(event) {
+		event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
+	}
+
+	function getTranslateValue(timeline) {
+		var timelineStyle = window.getComputedStyle(timeline.get(0), null),
+			timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
+         		timelineStyle.getPropertyValue("-moz-transform") ||
+         		timelineStyle.getPropertyValue("-ms-transform") ||
+         		timelineStyle.getPropertyValue("-o-transform") ||
+         		timelineStyle.getPropertyValue("transform");
+
+        if( timelineTranslate.indexOf('(') >=0 ) {
+        	var timelineTranslate = timelineTranslate.split('(')[1];
+    		timelineTranslate = timelineTranslate.split(')')[0];
+    		timelineTranslate = timelineTranslate.split(',');
+    		var translateValue = timelineTranslate[4];
+        } else {
+        	var translateValue = 0;
+        }
+
+        return Number(translateValue);
+	}
+
+	function setTransformValue(element, property, value) {
+		element.style["-webkit-transform"] = property+"("+value+")";
+		element.style["-moz-transform"] = property+"("+value+")";
+		element.style["-ms-transform"] = property+"("+value+")";
+		element.style["-o-transform"] = property+"("+value+")";
+		element.style["transform"] = property+"("+value+")";
+	}
+
+	//based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
+	function parseDate(events) {
+		var dateArrays = [];
+		events.each(function(){
+			var dateComp = $(this).data('date').split('/'),
+				newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
+			dateArrays.push(newDate);
+		});
+	    return dateArrays;
+	}
+
+	function parseDate2(events) {
+		var dateArrays = [];
+		events.each(function(){
+			var singleDate = $(this),
+				dateComp = singleDate.data('date').split('T');
+			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
+				var dayComp = dateComp[0].split('/'),
+					timeComp = dateComp[1].split(':');
+			} else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
+				var dayComp = ["2000", "0", "0"],
+					timeComp = dateComp[0].split(':');
+			} else { //only DD/MM/YEAR
+				var dayComp = dateComp[0].split('/'),
+					timeComp = ["0", "0"];
+			}
+			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
+			dateArrays.push(newDate);
+		});
+	    return dateArrays;
+	}
+
+	function daydiff(first, second) {
+	    return Math.round((second-first));
+	}
+
+	function minLapse(dates) {
+		//determine the minimum distance among events
+		var dateDistances = [];
+		for (i = 1; i < dates.length; i++) { 
+		    var distance = daydiff(dates[i-1], dates[i]);
+		    dateDistances.push(distance);
+		}
+		return Math.min.apply(null, dateDistances);
+	}
+
+	/*
+		How to tell if a DOM element is visible in the current viewport?
+		http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+	*/
+	function elementInViewport(el) {
+		var top = el.offsetTop;
+		var left = el.offsetLeft;
+		var width = el.offsetWidth;
+		var height = el.offsetHeight;
+
+		while(el.offsetParent) {
+		    el = el.offsetParent;
+		    top += el.offsetTop;
+		    left += el.offsetLeft;
+		}
+
+		return (
+		    top < (window.pageYOffset + window.innerHeight) &&
+		    left < (window.pageXOffset + window.innerWidth) &&
+		    (top + height) > window.pageYOffset &&
+		    (left + width) > window.pageXOffset
+		);
+	}
+
+	function checkMQ() {
+		//check if mobile or desktop device
+		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+	}
+});
 </script>
 
 <style scoped>
