@@ -14,23 +14,12 @@
   </div>
 
   <!-- History & Timeline Section -->
-  <FiftyFifty
-   title="History"
-   :paragraphs="[
-      'Composhield A/S started in 1996 as an internal research project in the company Giantcode A/S. From 1996 and until the forming of the company Composhield A/S, several project teams were developing new protection technologies for the future.',
-      'All efforts were purely put into research as the strategy was to develop unique patented technologies before any commercialization. All research was done in close cooperation with international universities, armed forces, and some of the largest global defense companies.',
-      'Composhield A/S was then formed in year 2000 and has today seven patents and patent pending technologies and products. In 2007 Composhield A/S formed a joint-venture, AMTANK Armor LLC., together with American Tank & Fabricating Company, to serve the North American market.',
-      'Our strategic intent is to develop tomorrows technologies for todays global market, with the main focus on strategic partnership and superior quality.'
-   ]"
->
-   <template #alternateVisual>
-      <Timeline :milestones="[
-         { year: 1996, description: 'Started as an internal research project.' },
-         { year: 2000, description: 'Composhield A/S was formed.' },
-         { year: 2007, description: 'Formed a joint-venture, AMTANK Armor LLC.' }
-      ]" />
-   </template>
-</FiftyFifty>
+
+  <Timeline 
+    :milestones="timelineMilestones" 
+    :startingPoint="timelineStartingPoint"
+/>
+
 
 
   <!-- AMTANK Armor Section -->
@@ -56,14 +45,32 @@
      imageAlt="Vision and Mission of Composhield"
   />
 
-<HorizontalTimeline/>
 
 </template>
 
 <script setup lang="ts">
 import FiftyFifty from '@/components/FiftyFifty.vue';
 import Timeline from '@/components/Timeline.vue';
-import HorizontalTimeline from '@/components/HorizontalTimeline.vue';
 
+const timelineMilestones = [
+    {
+        year: '1996',
+        description: 'Composhield A/S started in 1996 as an internal research project in the company Giantcode A/S. From 1996 and until the forming of the company Composhield A/S, several project teams were developing new protection technologies for the future.'
+    },
+    {
+        year: '2000',
+        description: 'All efforts were purely put into research as the strategy was to develop unique patented technologies before any commercialization. All research was done in close cooperation with international universities, armed forces, and some of the largest global defense companies. Composhield A/S was then formed in year 2000 and has today seven patents and patent pending technologies and products.'
+    },
+    {
+        year: '2007',
+        description: 'Composhield A/S formed a joint-venture, AMTANK Armor LLC., together with American Tank & Fabricating Company, to serve the North American market. Our strategic intent is to develop tomorrows technologies for todays global market, with the main focus on strategic partnership and superior quality.'
+    }
+];
+
+const timelineStartingPoint = {
+    year: 'Start',
+    description: 'Beginning of the timeline'
+};
 </script>
+
 
