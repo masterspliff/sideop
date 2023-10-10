@@ -20,50 +20,62 @@
         Home
       </router-link>
       <div class="relative inline-block">
-        <router-link 
-          to="/products" 
-          class="nav-link flex items-center text-white hover:text-gray-400 focus:text-white font-semibold"
-          aria-label="Products"
-          @click.native.stop="toggleProductsMenu()"
-        >
-          Products
-          <svg xmlns="http://www.w3.org/2000/svg" v-if="isProductsMenuOpen || groupHovered" class="h-4 w-4 inline-block ml-1 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" v-else class="h-4 w-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </router-link>
-        <div v-if="isProductsMenuOpen || groupHovered" class="products-dropdown absolute left-0 w-48 mt-2 py-2 bg-white font-medium rounded shadow-md md:bg-blue-800 md:ring-1 md:ring-black md:ring-opacity-5 transition duration-200 ease-in-out origin-top-right md:rounded-md" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-          <router-link 
-            to="/products/add-on-armor" 
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600" 
-            role="menuitem"
-            aria-label="Add-on"
-            @click.native="isMobile && toggleMenu()"
-          >
-            Add-on
-          </router-link>
-          <router-link 
-            to="/products/spall-liner" 
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600" 
-            role="menuitem"
-            aria-label="Spall-liner"
-            @click.native="isMobile && toggleMenu()"
-          >
-            Spall-liner
-          </router-link>
-          <router-link 
-            to="/products/structural-armor" 
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600" 
-            role="menuitem"
-            aria-label="Structural armor"
-            @click.native="isMobile && toggleMenu()"
-          >
-            Structural armor
-          </router-link>
-        </div>
-      </div>
+    <router-link 
+      to="/products" 
+      class="nav-link flex items-center text-white hover:text-gray-400 focus:text-white font-semibold"
+      aria-label="Products"
+      @click.native.stop="toggleProductsMenu"
+      @mouseenter="groupHovered = true"
+      @mouseleave="groupHovered = false"
+    >
+      Products
+      <svg xmlns="http://www.w3.org/2000/svg" v-if="isProductsMenuOpen || groupHovered" class="h-4 w-4 inline-block ml-1 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" v-else class="h-4 w-4 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </router-link>
+<div 
+    v-if="isProductsMenuOpen || groupHovered" 
+    class="products-dropdown absolute left-0 w-48 py-2 bg-white font-medium rounded shadow-md md:bg-blue-800 md:ring-1 md:ring-black md:ring-opacity-5 transition duration-200 ease-in-out origin-top-right md:rounded-md"
+    @click.native.stop="isMobile && toggleMenu()"
+    @mouseenter="groupHovered = true"
+    @mouseleave="groupHovered = false"
+    role="menu" aria-orientation="vertical" aria-labelledby="options-menu"
+>
+      <router-link 
+        to="/products/add-on-armor" 
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600 flex items-center" 
+        role="menuitem"
+        aria-label="Add-on"
+        @click.native="isMobile && toggleMenu()"
+      >
+        <img src="add-on.jpg" alt="Add-on Image" class="product-image">
+        Add-on
+      </router-link>
+      <router-link 
+        to="/products/spall-liner" 
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600 flex items-center" 
+        role="menuitem"
+        aria-label="Spall-liner"
+        @click.native="isMobile && toggleMenu()"
+      >
+        <img src="add-on-two.jpg" alt="Spall-liner Image" class="product-image">
+        Spall-liner
+      </router-link>
+      <router-link 
+        to="/products/structural-armor" 
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white md:text-white md:hover:bg-blue-600 flex items-center" 
+        role="menuitem"
+        aria-label="Structural armor"
+        @click.native="isMobile && toggleMenu()"
+      >
+        <img src="add-on-three.jpg" alt="Structural armor Image" class="product-image">
+        Structural armor
+      </router-link>
+    </div>
+</div>
       <router-link 
         to="/services" 
         class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" 
@@ -138,4 +150,45 @@
     document.removeEventListener('click', handleClickOutside)
   })
   </script>
+  
+  <style scoped>
+  .product-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 5px;
+      opacity: 0; /* Images are initially hidden */
+      transition: opacity 0.3s ease-in-out;
+      transition-delay: 0.2s; /* Delay of 0.2 seconds */
+  }
+  
+  /* Show images with a delay when the dropdown is active */
+  .products-dropdown .product-image {
+      opacity: 1;
+      transition-delay: 0s; /* No delay when hiding the images */
+  }
+
+  .nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust height to desired thickness */
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff; /* Change to your preferred color */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+  </style>
+  
   

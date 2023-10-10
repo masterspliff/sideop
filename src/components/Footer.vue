@@ -4,7 +4,7 @@
       <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="space-y-8">
-            <img class="h-12 rounded" src="@/assets/logojpg.jpg" alt="Composhield" />
+            <img class="h-14 rounded" src="@/assets/composhield_logo2.png" alt="Composhield" />
             <p class="text-sm leading-6 text-gray-300">COMPOSHIELD A/S
             <p>Denmark • USA • UAE </p>
             <p>TEL: +45 9647 7500

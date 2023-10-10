@@ -1,11 +1,11 @@
 <template>
   <header :class="{ 'bg-white bg-opacity-80 blur[10px]': scrolled, 'bg-transparent': !scrolled }" class="sticky top-0 h-0 transition-all duration-500 z-50">
-    <nav class="bg-gray-900 mx-auto flex w-full items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="bg-gray-900 mx-auto flex w-full items-center justify-between p-4 lg:p-6" aria-label="Global">
       <div class="flex items-center flex-wrap justify-between w-full">
         <div class="flex items-center">
           <router-link to="/" class="m-[-1.5] p-1.5">
             <span class="sr-only">Composhield</span>
-            <img class="h-10 w-auto rounded-sm" src="@/assets/logojpg.jpg" alt="Composhield Logo" />
+            <img class="h-10 w-auto lg:h-14 rounded-sm" src="@/assets/composhield_logo2.png" alt="Composhield Logo" />
           </router-link>
           <div class="hidden md:block lg:block ml-2 text-white text-lg font-semibold">COMPOSHIELD</div>
         </div>
@@ -13,10 +13,10 @@
         <!-- Mobile Menu Button -->
         <div class="lg:hidden relative z-100">
           <button @click.stop="toggleMenu" class="focus:outline-none" aria-label="Toggle menu">
-            <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white relative lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white relative" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white relative lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
@@ -31,6 +31,7 @@
     </transition>
   </header>
 </template>
+
 
 
 <script setup>
