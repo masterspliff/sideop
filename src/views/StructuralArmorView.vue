@@ -27,35 +27,52 @@
     </div>
 </div>
 
-
-    <div class="mt-12 grid gap-5 lg:grid-cols-3">
-     <ProductCards
+<ParallaxComponent>
+  <!-- Non-Mobile: Resilient Structures with HIRC -->
+  <FiftyFifty
     title="Non-Mobile: Resilient Structures with HIRC"
-    description="Non-Mobile applications involve permanent structures such as embassies, military headquarters, and power plants targeted by hostile actions. The predominant threat is large explosive charges, like hundreds of kilograms of TNT. Composhield’s solution is the High Impact-Resistant Composite (HIRC), resistant to blast loads. The tech integrates a UHSS rebar pattern with aramid fibers in a specialized cementitious matrix, forming a durable panel that absorbs significant energy without loss of integrity."
-    features="Excellent resistance to blasts; Ballistic protection to STANAG 4569 Level 3; Protects against fragmentation"
-    additional="Although heavier than our mobile CP tech, the SC tech is more cost-effective, suitable for protecting larger structures where mass isn’t the main concern."
-    image="/Hirc_panel.jpg"
-/>
+    :paragraphs="[
+      'Non-Mobile applications involve permanent structures such as embassies, military headquarters, and power plants targeted by hostile actions. The predominant threat is large explosive charges, like hundreds of kilograms of TNT.',
+      'Composhield’s solution is the High Impact-Resistant Composite (HIRC), resistant to blast loads. The tech integrates a UHSS rebar pattern with aramid fibers in a specialized cementitious matrix, forming a durable panel that absorbs significant energy without loss of integrity.',
+      'Features: Excellent resistance to blasts; Ballistic protection to STANAG 4569 Level 3; Protects against fragmentation.',
+      'Although heavier than our mobile CP tech, the SC tech is more cost-effective, suitable for protecting larger structures where mass isn’t the main concern.'
+    ]"
+    imageSrc="/Hirc_panel.jpg"
+    imageAlt="High Impact-Resistant Composite"
+  />
 
-<ProductCards
+  <!-- Semi-Mobile: Advanced SC Technology -->
+  <FiftyFifty
     title="Semi-Mobile: Advanced SC Technology"
-    description="Semi-Mobile solutions, like container doors with SC packages, benefit from Composhield’s patented Steel-Concrete composite (SC). This unique system combines HHA steel and HH steel with a reinforced cement matrix, producing an armor panel specialized for semi-mobile contexts."
-    features="Outstanding blast resistance; Ballistic defense up to STANAG 4569 Level 3; Defense against fragmentation"
-    additional="The SC tech, while heavier than mobile CP, is cost-efficient, making it apt for guarding sizable structures where weight isn't paramount."
-    image="/semi-mobile-door.jpg"
-/>
+    :paragraphs="[
+      'Semi-Mobile solutions, like container doors with SC packages, benefit from Composhield’s patented Steel-Concrete composite (SC). This unique system combines HHA steel and HH steel with a reinforced cement matrix, producing an armor panel specialized for semi-mobile contexts.',
+      'Features: Outstanding blast resistance; Ballistic defense up to STANAG 4569 Level 3; Defense against fragmentation.',
+      'The SC tech, while heavier than mobile CP, is cost-efficient, making it apt for guarding sizable structures where weight isn\'t paramount.'
+    ]"
+    imageSrc="/semi-mobile-door.jpg"
+    imageAlt="Advanced SC Technology"
+    reverseOrder
+  />
 
-<ProductCards
+  <!-- Mobile: High-Strength Composhield Armor -->
+  <FiftyFifty
     title="Mobile: High-Strength Composhield Armor"
-    description="Composhield's armor for mobile settings uses high-strength composite materials with ballistic properties. The Ceramic Polymer (CP) technology, also used for add-on armor, is optimized for mobile use. These CP armor panels function as structural elements, like sides or doors, while ensuring ballistic protection."
-    features="STANAG 4569 Level 4 ballistic performance; Defense from artillery shell fragments; Exceptional structural strength and stiffness"
-    additional="The CP armor system is lightweight, eliminating redundant components. This makes it perfect for scenarios with limited mass and space."
-    image="/mobile-panel.png"
-/>
+    :paragraphs="[
+      'Composhield\'s armor for mobile settings uses high-strength composite materials with ballistic properties. The Ceramic Polymer (CP) technology, also used for add-on armor, is optimized for mobile use.',
+      'These CP armor panels function as structural elements, like sides or doors, while ensuring ballistic protection.',
+      'Features: STANAG 4569 Level 4 ballistic performance; Defense from artillery shell fragments; Exceptional structural strength and stiffness.',
+      'The CP armor system is lightweight, eliminating redundant components. This makes it perfect for scenarios with limited mass and space.'
+    ]"
+    imageSrc="/mobile-panel.png"
+    imageAlt="High-Strength Composhield Armor"
+  />
+</ParallaxComponent>
 
 
-    </div>
+
+
   </div>
+  <ParallaxComponent>
 
   <ProductFeature 
       :title="'Effective, Lightweight, and Customizable Protection for Vehicles'"
@@ -63,7 +80,7 @@
       :featuresList="features"
       :imagesList="images"
     />
-
+</ParallaxComponent>
 
 
 
@@ -75,6 +92,8 @@ import { ref } from 'vue'
 import ProductCards from '@/components/ProductCards.vue'
 import HeroSection from '@/components/HeroSection.vue';
 import ProductFeature from '@/components/ProductFeature.vue'
+import ParallaxComponent from '@/components/ParallaxComponent.vue';
+import FiftyFifty from '@/components/FiftyFifty.vue';
 
 const features = ref([
     { 
@@ -114,3 +133,7 @@ const images = ref([
 
   </script>
   
+
+<style scoped>
+
+</style>

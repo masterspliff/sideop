@@ -14,28 +14,57 @@
       <p class="mt-6 text-lg leading-8 text-gray-300">
         </p>
       </div>
+      
+
   </div>
-  
+  <div v-if="!hideOurProducts">
+    <FiftyFifty
+      title="Add-on Armor"
+      :paragraphs="[
+        'Add-on armor can be used to effectively increase the protection level of existing and new vehicles. With composite technology the weight penalty to the vehicle can be reduced, making implementation of high-level protection solutions possible even for light vehicles without losing mobility.',
+        'Add-on armor systems are customized to meet a specific threat requirement by including different types of materials in the armor solution and considering any existing base armor, such as a steel or aluminium vehicle hull. This renders all armor solutions provided by Composhield unique to the specific application and scenario.',
+        'Composhield is dedicated to developing light and durable armor solutions to defeat ballistic and IED threats as faced on the battlefield today.'
+      ]"
+      imageSrc="/raven.jpg"
+      imageAlt="Composhield's advanced armor engineering"
+    />
+    <FiftyFifty
+      title="Spall-Liner"
+      :paragraphs="[
+        'Add-on armor can be used to effectively increase the protection level of existing and new vehicles. With composite technology the weight penalty to the vehicle can be reduced, making implementation of high-level protection solutions possible even for light vehicles without losing mobility.',
+        'Add-on armor systems are customized to meet a specific threat requirement by including different types of materials in the armor solution and considering any existing base armor, such as a steel or aluminium vehicle hull. This renders all armor solutions provided by Composhield unique to the specific application and scenario.',
+        'Composhield is dedicated to developing light and durable armor solutions to defeat ballistic and IED threats as faced on the battlefield today.'
+      ]"
+      imageSrc="/raven.jpg"
+      imageAlt="Composhield's advanced armor engineering"
+      reverseOrder    
+      />
+      <FiftyFifty
+      title="Structural armor"
+      :paragraphs="[
+        'Add-on armor can be used to effectively increase the protection level of existing and new vehicles. With composite technology the weight penalty to the vehicle can be reduced, making implementation of high-level protection solutions possible even for light vehicles without losing mobility.',
+        'Add-on armor systems are customized to meet a specific threat requirement by including different types of materials in the armor solution and considering any existing base armor, such as a steel or aluminium vehicle hull. This renders all armor solutions provided by Composhield unique to the specific application and scenario.',
+        'Composhield is dedicated to developing light and durable armor solutions to defeat ballistic and IED threats as faced on the battlefield today.'
+      ]"
+      imageSrc="/raven.jpg"
+      imageAlt="Composhield's advanced armor engineering"
+          
+      />
+  </div>
     <router-view></router-view>
 
-<FutureCards />
+  <FutureCards />
 
 </template>
 
 
-
-<script>
-
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import FiftyFifty from '@/components/FiftyFifty.vue';
+import { useRoute } from 'vue-router';
 import FutureCards from '@/components/FutureCards.vue';
 
-
-export default {
-  computed: {
-    hideOurProducts() {
-      return this.$route.meta.hideOurProductsSection;
-    },
-  },
-};
-
+const route = useRoute();
+const hideOurProducts = computed(() => route.meta.hideOurProductsSection);
 
 </script>

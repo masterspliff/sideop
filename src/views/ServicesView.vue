@@ -17,6 +17,7 @@
   </div>
 
   <!-- Engineering Section -->
+  <ParallaxComponent>
   <FiftyFifty
   title="Innovative Armor Engineering"
   :paragraphs="[
@@ -27,7 +28,10 @@
   imageSrc="Engineering.jpg"
   imageAlt="Composhield's advanced armor engineering"
 />
+</ParallaxComponent>
 
+
+<ParallaxComponent>
 
   <!-- Armor Integration Section -->
   <FiftyFifty
@@ -40,7 +44,9 @@
   imageAlt="Composhield's seamless armor integration process"
   reverseOrder
 />
+</ParallaxComponent>
 
+<ParallaxComponent>
 
   <!-- Production Section -->
   <FiftyFifty
@@ -52,7 +58,7 @@
   imageSrc="Production.jpg"
   imageAlt="Composhield's precision armor production facility"
 />
-
+</ParallaxComponent>
 <div>
   <Validation/>
 </div>
@@ -62,6 +68,7 @@
 <script setup lang="ts">
 import FiftyFifty from '@/components/FiftyFifty.vue';
 import Validation from '@/components/Validation.vue';
+import ParallaxComponent from '@/components/ParallaxComponent.vue';
 
 
 </script>

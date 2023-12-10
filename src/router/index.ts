@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import AddOnArmorView from '../views/AddOnArmorView.vue';
-import SpallLinerView from '../views/SpallLinerView.vue';
+import SpalllinerView from '../views/SpalllinerView.vue';
 import StructuralArmorView from '../views/StructuralArmorView.vue';
 import ServicesView from '../views/ServicesView.vue';
 import AboutView from '../views/AboutView.vue';
@@ -38,7 +38,7 @@ const router = createRouter({
         },
         {
           path: 'spall-liner',
-          component: SpallLinerView,
+          component: SpalllinerView,
           meta: { hideOurProductsSection: true },
         },
         {

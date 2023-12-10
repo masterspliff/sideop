@@ -5,7 +5,8 @@
     headline="Introducing Add-on: Dual Protection for Modern Warfare." 
     subheadline="Effectively increasing the protection level of existingand new vehicles."
     />
-    
+    <ParallaxComponent>
+
     <FiftyFifty
   title="
   Add-on Armor
@@ -18,6 +19,9 @@
   imageSrc="/raven.jpg"
   imageAlt="Composhield's advanced armor engineering"
 />
+</ParallaxComponent>
+
+<ParallaxComponent>
 
 <ProductFeature 
       :title="'Effective, Lightweight, and Customizable Protection for Vehicles'"
@@ -25,7 +29,7 @@
       :featuresList="features"
       :imagesList="images"
     />
-
+</ParallaxComponent>
   </template>
   
 <script setup lang="ts">
@@ -33,6 +37,7 @@ import { ref } from 'vue'
 import ProductFeature from '@/components/ProductFeature.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import FiftyFifty from '@/components/FiftyFifty.vue'; // Adjust the path based on your directory structure
+import ParallaxComponent from '@/components/ParallaxComponent.vue';
 
 const features = ref([
     { 

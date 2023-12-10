@@ -1,8 +1,8 @@
 <template>
-  <div class="relative h-screen overflow-hidden">
+  <div class="relative h-screen overflow-hidden video">
     <!-- Background Video -->
-    <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-  <source src="/sfm.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline class="absolute-0 w-full h-full object-cover ">
+  <source src="/smf_compo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -29,6 +29,8 @@
   </div>
 
   <FutureCards />
+  <Validation />
+  <News />
   <NewJob />
 </template>
 
@@ -37,5 +39,13 @@
 <script setup lang="ts">
 import FutureCards from '@/components/FutureCards.vue';
 import NewJob from '@/components/NewJob.vue';
+import Validation from '@/components/Validation.vue';
+import News from '@/components/News.vue';
 
 </script>
+
+<style scoped>
+.video {
+  margin-top: -120px;
+}
+</style>
