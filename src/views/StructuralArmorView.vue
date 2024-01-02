@@ -6,27 +6,6 @@
     subheadline="Strong, Resilient, and Designed to Withstand the Toughest Conditions"
     />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 shadow-inner">
-    <div class="text-center">
-        <h2 class="text-2xl font-bold text-blue-600 mb-6">Steadfast Protection Against Threats</h2>
-        
-        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-            In the face of threats and extreme structural loads, <span class="font-semibold">Structural Armor</span> emerges as a beacon of unwavering protection. Ingeniously crafted, these armor solutions stand strong against hostile actions, all while shouldering substantial structural loads. Their dual prowess empowers architects and designers, offering them the liberty to embed these panels as pivotal construction entities across vehicles, shelters, and infrastructures. In doing so, they bolster structural integrity without a hint of compromise on safety.
-        </p>
-        
-        <hr class="border-gray-300 my-6">
-        
-        <p class="text-lg text-gray-700 leading-relaxed">
-            <span class="font-semibold">Composhield</span>, a pioneer in armor technology, stands tall with its innovative flair. Our suite encompasses three distinguished structural armor technologies, each meticulously sculpted for specific application arenas: non-mobile, semi-mobile, and mobile.
-        </p>
-        
-        <div class="mt-6">
-            <span class="inline-block bg-blue-600 text-white px-4 py-1 rounded font-semibold text-sm shadow">Innovation in Defense</span>
-        </div>
-    </div>
-</div>
-
 <ParallaxComponent>
   <!-- Non-Mobile: Resilient Structures with HIRC -->
   <FiftyFifty
@@ -71,7 +50,6 @@
 
 
 
-  </div>
   <ParallaxComponent>
 
   <ProductFeature 

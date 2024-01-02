@@ -123,12 +123,12 @@ export default {
         imageUrl: '/team/Morten_web.jpg',
       },
       {
-        name: 'Julie Pilegaard',
+        name: 'Patricia Rodriguez',
         title: 'Administration',
         role: 'Admin',
         email: 'julie.pilegaard@example.com',
         telephone: '+1-202-555-0104',
-        imageUrl: '/team/JuliePilegaard.png',
+        imageUrl: '/team/Patricia.jpg',
       },
       {
         name: 'Lisette Nørup',

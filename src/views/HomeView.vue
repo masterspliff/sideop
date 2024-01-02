@@ -2,7 +2,7 @@
   <div class="relative h-screen overflow-hidden video">
     <!-- Background Video -->
     <video autoplay loop muted playsinline class="absolute-0 w-full h-full object-cover ">
-  <source src="/smf_compo.mp4" type="video/mp4">
+  <source src="/sfm2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

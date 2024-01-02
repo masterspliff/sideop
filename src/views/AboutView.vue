@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-400">
+  <div class="bg-gray-200">
     <!-- Header -->
 
     <main class="isolate">
@@ -102,8 +102,14 @@
 <ParallaxComponent>
             <!-- Image section -->
       <div class="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-        <img src="/ComposhieldEurope.jpg" alt="" class="aspect-[4/2] w-full object-cover xl:rounded-3xl" />
-      </div>
+        <video 
+        src="/composhield_euro.mp4" 
+        class="aspect-[4/2] w-full object-cover xl:rounded-3xl" 
+        autoplay 
+        loop 
+        muted>
+        Your browser does not support the video tag.
+    </video>      </div>
       
       <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
