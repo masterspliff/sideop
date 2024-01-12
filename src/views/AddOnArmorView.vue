@@ -37,7 +37,7 @@ IED Protection
 '*High structural integrity and stiffness',
 '*Superior multi hit capability',
 ]"
-imageSrc="/raven.jpg"
+imageSrc="/IED_example.jpeg"
 imageAlt="Composhield's advanced armor engineering"
 reverseOrder
 />
@@ -55,7 +55,7 @@ Ballistic Protection
 'Composhield armor solutions have been applied specifically to counter IED threatsby providing very high structural durability to withstand the blast and superior stopping capabilities to counter fragmentation.',
 'Current scenarios also call for protection against explosively formed projectiles (EFPs), which present an even more severe threat today. Composhield armor solutions are tested against such threats and can be tailored to meet any requirement needed.',
 ]"
-imageSrc="/raven.jpg"
+imageSrc="/Actros_armor.jpeg"
 imageAlt="Composhield's advanced armor engineering"
 
 />
