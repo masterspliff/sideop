@@ -7,6 +7,8 @@ import SpalllinerView from '../views/SpalllinerView.vue';
 import StructuralArmorView from '../views/StructuralArmorView.vue';
 import ServicesView from '../views/ServicesView.vue';
 import AboutView from '../views/AboutView.vue';
+import BookView from '../views/BookView.vue';
+
 
 
 const router = createRouter({
@@ -26,6 +28,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView
+    },
+    {
+      path: '/book',
+      name: 'book',
+      component: BookView
     },
     {
       path: '/products',
