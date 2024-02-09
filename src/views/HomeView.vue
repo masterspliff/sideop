@@ -33,7 +33,6 @@
 
   <FutureCards />
   <Validation />
-  <News />
   <NewJob />
 </template>
 

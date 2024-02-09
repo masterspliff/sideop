@@ -6,7 +6,7 @@
   </div>
 
   <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto max-w-6xl">
-    <li v-for="person in europeanTeam" :key="person.email" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <li v-for="person in europeanTeam" :key="person.email" class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-lg hover:shadow-2xl transition-shadow duration-300">
       <div class="flex flex-1 flex-col p-8">
         <img class="mx-auto h-32 w-32 flex-shrink-0 rounded-full" :src="person.imageUrl" :alt="person.name" />
         <h3 class="mt-6 text-sm font-medium text-gray-900">{{ person.name }}</h3>
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import { MailIcon, PhoneIcon } from '@heroicons/vue/solid'
+
 
 export default {
   data() {
@@ -104,7 +104,7 @@ export default {
           role: 'CEO',
           email: 'michael.nørup@example.com',
           telephone: '+1-202-555-0101',
-          imageUrl: '/team/Michael_web.jpg',
+          imageUrl: '/team/book/profile_pictures/michael_gray.png',
         },
         {
          name: 'Ib Meldgaard Møller',
@@ -112,7 +112,7 @@ export default {
         role: 'Vice President',
         email: 'ib.møller@example.com',
         telephone: '+1-202-555-0102',
-        imageUrl: '/team/Ib_web.jpg',
+        imageUrl: '/team/book/profile_pictures/ib_gray.png',
       },
       {
         name: 'Morten Fogh Møller',
@@ -120,15 +120,7 @@ export default {
         role: 'Vice President',
         email: 'morten.møller@example.com',
         telephone: '+1-202-555-0103',
-        imageUrl: '/team/Morten_web.jpg',
-      },
-      {
-        name: 'Patricia Rodriguez',
-        title: 'Administration',
-        role: 'Admin',
-        email: 'julie.pilegaard@example.com',
-        telephone: '+1-202-555-0104',
-        imageUrl: '/team/Patricia.jpg',
+        imageUrl: '/team/book/profile_pictures/morten_gray.png',
       },
       {
         name: 'Lisette Nørup',
@@ -136,7 +128,15 @@ export default {
         role: 'Legal',
         email: 'lisette.nørup@example.com',
         telephone: '+1-202-555-0105',
-        imageUrl: '/team/Lisette_web.jpg',
+        imageUrl: '/team/book/profile_pictures/lisette_gray.png',
+      },
+      {
+        name: 'Patricia Rodriguez',
+        title: 'Administration',
+        role: 'Admin',
+        email: 'julie.pilegaard@example.com',
+        telephone: '+1-202-555-0104',
+        imageUrl: '/team/book/profile_pictures/patracia_gray.png',
       },
       {
         name: 'Philip Olrik',
@@ -144,7 +144,7 @@ export default {
         role: 'Sales',
         email: 'philip.olrik@example.com',
         telephone: '+1-202-555-0106',
-        imageUrl: '/team/PhilipOlrik.jpg',
+        imageUrl: '/team/book/profile_pictures/phillip_gray.png',
       }
       ],
       usaTeam: [

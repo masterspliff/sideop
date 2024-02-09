@@ -71,7 +71,6 @@ const books = [
 <style scoped>
 
 
-
 </style>
 
 
