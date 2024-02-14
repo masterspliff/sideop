@@ -23,9 +23,6 @@
 
             <!-- Hexagon 4 -->
             <path d="M120 704.4h120l60 104.4h-120l-60-104.4Z" stroke-width="0" />
-
-
-
           </svg>
         </svg>
         <div class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48" aria-hidden="true">
@@ -39,31 +36,13 @@
                 <p class="relative mt-6 text-lg leading-8 text-gray-800 sm:max-w-md lg:max-w-none mt-5">Composhield A/S has today several patented technologies and continues to research, in co-operation with national and international universities, in the field of composite materials. Our key focus is to bring tomorrow's technologies into today’s marketplace.</p>
               </div>
               <div class="mt-14 flex justify-end gap-12 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                <div class="ml-auto flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80 lg:max-w-lg xl:max-w-xl">
                   <div class="relative">
-                    <img src="/img_6.jpg" alt="" class="aspect-[2/4] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                    <video src="/MRAP.mp4" class="w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" autoplay loop muted></video>
+                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"></div>
                   </div>
                 </div>
                 <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                  <div class="relative">
-                    <img src="/office.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
-                  <div class="relative">
-                    <img src="/office.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
-                </div>
-                <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                  <div class="relative">
-                    <img src="/office.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
-                  <div class="relative">
-                    <img src="/office.jpg" alt="" class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
                 </div>
               </div>
             </div>
@@ -173,16 +152,13 @@
           </div>
         </div>
       </div>
-    </ParallaxComponent>
-
-  
+    </ParallaxComponent> 
     </main>
   </div>
 </template>
 
 <script setup>
-import { defineComponent, h, ref } from 'vue'
-import ContactMembers from '@/components/ContactMembers.vue';
+import { ref } from 'vue'
 import ParallaxComponent from '@/components/ParallaxComponent.vue';
 
 
@@ -230,26 +206,7 @@ const values = [
   },
 ]
 
-  // More people...
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Vel expedita assumenda placeat aut nisi optio voluptates quas',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    author: {
-      name: 'Michael Foster',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  // More posts...
-]
+
 
 
 const mobileMenuOpen = ref(false)
