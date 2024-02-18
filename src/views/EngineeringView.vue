@@ -1,7 +1,7 @@
 <template>
 
 
-   <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-20 lg:px-8">
+   <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-28 lg:px-8">
     
     <img src="/bg/bg_2.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
     <div class="mx-auto max-w-2xl text-center">
