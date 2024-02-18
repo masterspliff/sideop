@@ -6,7 +6,7 @@
     <div class="relative inline-block">
       <div v-if="isProductsMenuOpen || groupHovered" class="products-dropdown absolute left-0 w-48 py-2 bg-white font-medium rounded shadow-md md:bg-gray-800 md:ring-1 md:ring-black md:ring-opacity-5 transition duration-200 ease-in-out origin-top-right md:rounded-md" @mouseenter="groupHovered = true" @mouseleave="groupHovered = false" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
         <router-link to="/products/body-armor" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Add-on" @click="toggleMenuOnMobile">
-          <img src="/body-armor.jpg" alt="Body armor" class="product-image">
+          <img src="" alt="Body armor" class="product-image">
           Body armor
         </router-link>
         <router-link to="/products/spall-liner" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Spall-liner" @click="toggleMenuOnMobile">
