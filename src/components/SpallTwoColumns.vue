@@ -15,9 +15,6 @@
               <p class="mt-8"></p>
             </div>
           </div>
-          <div class="mt-10 flex">
-            <a href="/contact" class="rounded-md bg-green-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Get in touch</a>
-          </div>
         </div>
       </div>
       <div class="relative overflow-hidden pt-16 lg:pt-20">

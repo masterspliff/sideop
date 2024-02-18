@@ -67,7 +67,6 @@
   
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProductCards from '@/components/ProductCards.vue'
 import HeroSection from '@/components/HeroSection.vue';
 import ProductFeature from '@/components/ProductFeature.vue'
 import ParallaxComponent from '@/components/ParallaxComponent.vue';
@@ -107,7 +106,7 @@ const images = ref([
   { src: '/tank.jpg', alt: 'Add-On Armor Image 4', description: 'Armor installed on a vehicle' },
 ]);
 
-  const imageSrc = '/structural-armor-war.jpg';
+  const imageSrc = '/add-on.jpg';
 
   </script>
   

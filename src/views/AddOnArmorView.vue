@@ -106,7 +106,7 @@ const features = ref([
 ]);
 
 
-const imageSrc = ref('/add-on.jpg') // or whatever default or prop value you have
+const imageSrc = ref('/structural-armor-war.jpg') // or whatever default or prop value you have
 
 const images = ref([
   { src: '/add-on-four.jpg', alt: 'Add-On Armor Image 1', description: 'Detailed view of Add-On Armor' },
