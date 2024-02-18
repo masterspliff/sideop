@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       items: [
-        { title: 'LAND', image: landSystem, alt: 'Construction machinery at a building site' },
+        { title: 'Land', image: landSystem, alt: 'Construction machinery at a building site' },
         { title: 'Air', image: airSystem, alt: 'Safety helmet and tools representing protection measures' },
         { title: 'Naval', image: navalSystem, alt: 'Industrial facilities with lights indicating energy' },
         { title: 'Personal Protection', image: bodyArmor, alt: 'Modern train in motion showcasing transportation' }
@@ -61,7 +61,7 @@ img {
   position: absolute;
   -webkit-text-fill-color: transparent; /* Use for Chrome and Safari */
   text-fill-color: transparent; /* Standard syntax; currently only works in Firefox */
-  -webkit-text-stroke-width: 5px; /* Define the width of the stroke */
+  -webkit-text-stroke-width: 4px; /* Define the width of the stroke */
   -webkit-text-stroke-color: black; /* Define the color of the stroke */
   text-stroke-width: 1px; /* Standard syntax; currently only works in Firefox */
   text-stroke-color: black; /* Standard syntax; currently only works in Firefox */
