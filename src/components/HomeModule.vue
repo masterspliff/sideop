@@ -24,7 +24,7 @@
         
         <!-- Personal Protection -->
         <div class="section flex-1 bg-black text-white flex flex-col justify-center items-center group">
-          <img src="/products/body-armor.jpg" alt="Modern train in motion showcasing transportation" class="mb-4">
+          <img src="" alt="Modern train in motion showcasing transportation" class="mb-4">
           <h2 class="text-2xl font-bold mb-2">Personal Protection</h2>
           <a href="#" class="text-gray-300">Placeholder Link</a>
         </div>
