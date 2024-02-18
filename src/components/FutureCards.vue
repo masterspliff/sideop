@@ -24,17 +24,17 @@ export default {
   setup() {
     const screensData = [
   {
-    name: 'Add-on',
+    name: 'Land systems',
     link: '/products/add-on-armor',
     image: 'screen-image-armor1',
   },
   {
-    name: 'Spall-Liner',
+    name: 'Naval systems',
     link: '/products/spall-liner',
     image: 'screen-image-armor2',
   },
   {
-    name: 'Structural Armor',
+    name: 'Aerospace systems',
     link: '/products/structural-armor',
     image: 'screen-image-armor3',
   },

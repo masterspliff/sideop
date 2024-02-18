@@ -131,14 +131,6 @@ export default {
         imageUrl: '/team/book/profile_pictures/lisette_gray.png',
       },
       {
-        name: 'Marius',
-        title: 'Engineering',
-        role: 'Engineer',
-        email: 'julie.pilegaard@example.com',
-        telephone: '+1-202-555-0104',
-        imageUrl: '/team/book/profile_pictures/marius_gray.png',
-      },
-      {
         name: 'Patricia Rodriguez',
         title: 'Administration',
         role: 'Admin',

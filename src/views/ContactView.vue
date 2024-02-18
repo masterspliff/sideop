@@ -28,7 +28,6 @@ export default {
                 {name: 'Ib', position: 'Position 2', email: 'imm@composhield.com', phone: '123-456-7891'},
                 {name: 'Morten', position: 'Position 3', email: 'mfm@composhield.com', phone: '123-456-7891'},
                 {name: 'Lisette', position: 'Position 4', email: 'lnp@composhield.com', phone: '123-456-7891'},
-                {name: 'Marius', position: 'Position 5', email: 'mar@composhield.com', phone: '123-456-7891'},
                 {name: 'Phillip', position: 'Position 6', email: 'phi@composhield.com', phone: '123-456-7891'},
                 {name: 'Patricia', position: 'Position 7', email: 'pha@composhield.com', phone: '123-456-7891'},
             ],

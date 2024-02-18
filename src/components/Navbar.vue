@@ -1,6 +1,6 @@
 <template>
-  <header class="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-filter backdrop-blur-lg transition-all duration-500 z-50">
-    <nav class="mx-auto flex w-full items-center justify-between p-4 lg:p-6 bg-gradient-to-r from-green-800 via-gray-900 to-green-800" aria-label="Global">
+  <header class="sticky top-0 bg-transparent bg-opacity-90 backdrop-filter transition-all z-50">
+    <nav class="mx-auto flex w-full items-center justify-between p-4 lg:p-6 bg-gradient-to-t from-transparent via-gray-800 to-gray-900" aria-label="Global">
       <div class="flex items-center">
         <!-- Logo and Composhield Text -->
         <router-link to="/" class="m-[-1.5] p-1.5 flex items-center">
@@ -28,12 +28,5 @@ const toggleMenu = () => {
 }
 </script>
 
-
 <style scoped>
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, #1f2937 0%, #4b5563 30%, #1f2937 60%, #4b5563 100%);
-  background-size: 100% 3px, 3px 100%;
-  background-position: 0 0, 0 0;
-  background-repeat: no-repeat;
-}
 </style>

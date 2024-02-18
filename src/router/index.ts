@@ -5,9 +5,11 @@ import ProductsView from '../views/ProductsView.vue';
 import AddOnArmorView from '../views/AddOnArmorView.vue';
 import SpalllinerView from '../views/SpalllinerView.vue';
 import StructuralArmorView from '../views/StructuralArmorView.vue';
-import ServicesView from '../views/ServicesView.vue';
+import EngineeringView from '../views/EngineeringView.vue';
 import AboutView from '../views/AboutView.vue';
 import BookView from '../views/BookView.vue';
+import BodyArmorView from '../views/BodyArmorView.vue';
+import GPKView from '../views/GPKView.vue';
 
 
 
@@ -39,26 +41,36 @@ const router = createRouter({
       component: ProductsView,
       children: [
         {
-          path: 'add-on-armor',
-          component: AddOnArmorView,
+          path: 'body-armor',
+          component: BodyArmorView,
           meta: { hideOurProductsSection: true },
         },
         {
-          path: 'spall-liner',
-          component: SpalllinerView,
-          meta: { hideOurProductsSection: true },
-        },
-        {
-          path: 'structural-armor',
-          component: StructuralArmorView,
+          path: 'gunners-protection-kit',
+          component: GPKView,
           meta: { hideOurProductsSection: true },
         },
       ],
     },
     {
-      path: '/services',
-      name: 'services',
-      component: ServicesView,
+      path: '/add-on-armor',
+      name: 'add-on-armor',
+      component: AddOnArmorView,
+    },
+    {
+      path: '/spall-liner',
+      name: 'spall-liner',
+      component: SpalllinerView,
+    },
+    {
+      path: '/structural-armor',
+      name: 'structural-armor',
+      component: StructuralArmorView,
+    },
+    {
+      path: '/engineering',
+      name: 'engineering',
+      component: EngineeringView,
     },
   ]
 })

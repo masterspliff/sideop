@@ -53,16 +53,14 @@
   </div>
     <router-view></router-view>
 
-  <FutureCards />
 
 </template>
 
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import FiftyFifty from '@/components/FiftyFifty.vue';
 import { useRoute } from 'vue-router';
-import FutureCards from '@/components/FutureCards.vue';
 
 const route = useRoute();
 const hideOurProducts = computed(() => route.meta.hideOurProductsSection);

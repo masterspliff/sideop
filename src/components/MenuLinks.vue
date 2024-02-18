@@ -3,11 +3,31 @@
     <svg v-if="menuOpen" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 absolute top-4 right-4 text-white cursor-pointer">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
     </svg>
-    <router-link to="/" class="nav-link text-white hover:text-gray-400 font-semibold active:text-black" aria-label="Home" @click="toggleMenuOnMobile">
-      Home
-    </router-link>
     <div class="relative inline-block">
-      <router-link to="/products" class="nav-link flex items-center text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Products" @click.stop="toggleProductsMenu" @mouseenter="groupHovered = true" @mouseleave="groupHovered = false">
+      <div v-if="isProductsMenuOpen || groupHovered" class="products-dropdown absolute left-0 w-48 py-2 bg-white font-medium rounded shadow-md md:bg-gray-800 md:ring-1 md:ring-black md:ring-opacity-5 transition duration-200 ease-in-out origin-top-right md:rounded-md" @mouseenter="groupHovered = true" @mouseleave="groupHovered = false" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        <router-link to="/products/body-armor" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Add-on" @click="toggleMenuOnMobile">
+          <img src="/body-armor.jpg" alt="Body armor" class="product-image">
+          Body armor
+        </router-link>
+        <router-link to="/products/spall-liner" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Spall-liner" @click="toggleMenuOnMobile">
+          <img src="/add-on-two.jpg" alt="Spall-liner Image" class="product-image">
+          Gunners Protection Kit
+        </router-link>
+      </div>
+    </div>
+    <router-link to="/add-on-armor" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Services" @click="toggleMenuOnMobile">
+      Add-on Armor
+    </router-link>
+    <router-link to="/structural-armor" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Services" @click="toggleMenuOnMobile">
+      Structural Armor
+    </router-link>
+    <router-link to="/spall-liner" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Services" @click="toggleMenuOnMobile">
+      Spall-liner 
+    </router-link>
+    <router-link to="/engineering" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Services" @click="toggleMenuOnMobile">
+      Engineering
+    </router-link>
+    <router-link to="/products" class="nav-link flex items-center text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Products" @click.stop="toggleProductsMenu" @mouseenter="groupHovered = true" @mouseleave="groupHovered = false">
         Products
         <svg v-if="isProductsMenuOpen || groupHovered" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -16,30 +36,12 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </router-link>
-      <div v-if="isProductsMenuOpen || groupHovered" class="products-dropdown absolute left-0 w-48 py-2 bg-white font-medium rounded shadow-md md:bg-gray-800 md:ring-1 md:ring-black md:ring-opacity-5 transition duration-200 ease-in-out origin-top-right md:rounded-md" @mouseenter="groupHovered = true" @mouseleave="groupHovered = false" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-        <router-link to="/products/add-on-armor" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Add-on" @click="toggleMenuOnMobile">
-          <img src="/add-on.jpg" alt="Add-on Image" class="product-image">
-          Add-on
-        </router-link>
-        <router-link to="/products/spall-liner" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Spall-liner" @click="toggleMenuOnMobile">
-          <img src="/add-on-two.jpg" alt="Spall-liner Image" class="product-image">
-          Spall-liner
-        </router-link>
-        <router-link to="/products/structural-armor" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-500 hover:text-white md:text-white md:hover:bg-gray-600 flex items-center" role="menuitem" aria-label="Structural armor" @click="toggleMenuOnMobile">
-          <img src="/add-on-three.jpg" alt="Structural armor Image" class="product-image">
-          Structural armor
-        </router-link>
-      </div>
-    </div>
-    <router-link to="/services" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="Services" @click="toggleMenuOnMobile">
-      Services
-    </router-link>
     <router-link to="/about" class="nav-link text-white hover:text-gray-400 focus:text-white font-semibold" aria-label="About" @click="toggleMenuOnMobile">
       About
     </router-link>
     <router-link to="/contact" class="contact-button cursor-pointer text-white border-2 rounded-full px-8 py-2 hover:text-gray-400 hover:bg-gray-800 focus:text-white text-center text-base leading-6 font-semibold transition duration-150 ease-in-out" aria-label="Contact" @click.prevent="toggleMenuOnMobile">
-  Contact
-</router-link>
+    Contact
+    </router-link>
 
   </div>
 </template>
