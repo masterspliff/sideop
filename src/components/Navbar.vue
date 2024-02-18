@@ -1,6 +1,6 @@
 <template>
   <header class="sticky top-0 bg-transparent bg-opacity-90 backdrop-filter transition-all z-50">
-    <nav class="mx-auto flex w-full items-center justify-between p-4 lg:p-6 bg-gradient-to-t from-transparent via-gray-800 to-gray-900" aria-label="Global">
+    <nav class="mx-auto flex w-full items-center justify-between p-4 lg:p-6 bg-gradient-to-t from-transparent  to-black" aria-label="Global">
       <div class="flex items-center">
         <!-- Logo and Composhield Text -->
         <router-link to="/" class="m-[-1.5] p-1.5 flex items-center">
