@@ -14,7 +14,7 @@
 import landSystem from '@/assets/products/land-system_2.jpg';
 import airSystem from '@/assets/products/air-system_2.jpg';
 import navalSystem from '@/assets/products/naval-system_2.jpg';
-import bodyArmor from '@/assets/products/body-armor.webp';
+import bodyArmor from '@/assets/products/body-armor-streched.png';
 
 export default {
   name: 'HomeModule',
@@ -36,7 +36,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: flex-grow 0.3s ease;
+  transition: flex-grow 0.8s ease;
   cursor: pointer;
   display: flex;
   justify-content: center;
